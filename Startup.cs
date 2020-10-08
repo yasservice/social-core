@@ -10,8 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using SocialCore.Models;
 
-namespace WebApplication5
+namespace SocialCore
 {
     public class Startup
     {
@@ -26,6 +28,11 @@ namespace WebApplication5
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<SocialCoreContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SocialCoreContext")));
+
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

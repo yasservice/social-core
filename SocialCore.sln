@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication5", "WebApplication5.csproj", "{D9E2986F-9688-4601-95BA-09E8FA1D527B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialCore", "SocialCore.csproj", "{C28C06AD-B16A-4F02-B99F-94139712DAA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9E2986F-9688-4601-95BA-09E8FA1D527B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9E2986F-9688-4601-95BA-09E8FA1D527B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9E2986F-9688-4601-95BA-09E8FA1D527B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9E2986F-9688-4601-95BA-09E8FA1D527B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28C06AD-B16A-4F02-B99F-94139712DAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28C06AD-B16A-4F02-B99F-94139712DAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28C06AD-B16A-4F02-B99F-94139712DAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28C06AD-B16A-4F02-B99F-94139712DAA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {08FC0703-30E3-4281-9E9C-D533A2DD20B2}
+		SolutionGuid = {56E66175-5222-4D21-A0F4-2C047741CD32}
 	EndGlobalSection
 EndGlobal
