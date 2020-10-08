@@ -27,10 +27,10 @@ namespace SocialCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            //services.AddControllers();
 
-            services.AddDbContext<SocialCoreContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SocialCoreContext")));
+            //services.AddDbContext<SocialCoreContext>(options =>
+            //        options.UseNpgsql(Configuration.GetConnectionString("SocialCoreContext")));
 
          
         }
