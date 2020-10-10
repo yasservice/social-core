@@ -4,26 +4,26 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:49423",
-      "sslPort": 44300
+      "applicationUrl": "http://localhost:53361",
+      "sslPort": 44376
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "socialcore",
+      "launchUrl": "UserData",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SocialCore": {
+    "Social_core_exended": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "socialcore",
+      "launchUrl": "UserData",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "socialcore"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

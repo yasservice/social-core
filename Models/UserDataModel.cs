@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Diagnostics;
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SocialCore.Models
+
+namespace Social_core_exended.Models
 {
-	public class UserProfile
-	{
+    public class UserDataModel
+    {
 		public int id { get; set; }
 
 		[Required]
 		[StringLength(256, MinimumLength = 3)]
-		public string Email { get; set; }
+		public string email { get; set; }
 
 		[Required]
 		[RegularExpression(@"^[a-zA-Z _\-\s\d]{1,30}$")]
@@ -24,7 +26,5 @@ namespace SocialCore.Models
 		[Required]
 
 		public string avatars { get; set; }
-
 	}
 }
-

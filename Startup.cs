@@ -1,19 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using SocialCore.Models;
+using Social_core_exended.Models;
 
-namespace SocialCore
+namespace Social_core_exended
 {
     public class Startup
     {
@@ -27,12 +20,9 @@ namespace SocialCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllers();
-
-            //services.AddDbContext<SocialCoreContext>(options =>
-            //        options.UseNpgsql(Configuration.GetConnectionString("SocialCoreContext")));
-
-         
+            services.AddDbContext<UserDataContext>(opt =>
+            opt.UseNpgsql(Configuration.GetConnectionString("SCConnectionString")));
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
