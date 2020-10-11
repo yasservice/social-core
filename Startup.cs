@@ -6,9 +6,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Social_core_exended.Models;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace Social_core_exended
 {
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -21,8 +23,16 @@ namespace Social_core_exended
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserDataContext>(opt =>
-            opt.UseNpgsql(Configuration.GetConnectionString("SCConnectionString")));
+        string DBConnection = String.Format(
+            Configuration.GetConnectionString("SCConnectionString"),
+            Environment.GetEnvironmentVariable("DB_USER"),
+            Environment.GetEnvironmentVariable("DB_PASSWORD"),
+            Environment.GetEnvironmentVariable("DB_HOST"),
+            Environment.GetEnvironmentVariable("DB_PORT"),
+            Environment.GetEnvironmentVariable("DB_NAME")
+        );
+        services.AddDbContext<UserDataContext>(opt =>
+            opt.UseNpgsql(DBConnection));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,5 +64,6 @@ namespace Social_core_exended
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
+
     }
 }
