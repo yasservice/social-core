@@ -9,7 +9,7 @@ using Social_core_exended.Models;
 
 namespace Social_core_exended.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("users")]
     [ApiController]
     public class UserDataModelsController : ControllerBase
     {
@@ -20,18 +20,18 @@ namespace Social_core_exended.Controllers
             _context = context;
         }
 
-        // GET: api/UserDataModels
+        // GET: Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDataModel>>> GetUserDataModels()
         {
-            return await _context.UserDataModels.ToListAsync();
+            return await _context.users.ToListAsync();
         }
 
-        // GET: api/UserDataModels/5
+        // GET: Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDataModel>> GetUserDataModel(int id)
         {
-            var userDataModel = await _context.UserDataModels.FindAsync(id);
+            var userDataModel = await _context.users.FindAsync(id);
 
             if (userDataModel == null)
             {
@@ -41,7 +41,7 @@ namespace Social_core_exended.Controllers
             return userDataModel;
         }
 
-        // PUT: api/UserDataModels/5
+        // PUT: Users/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -73,30 +73,29 @@ namespace Social_core_exended.Controllers
             return NoContent();
         }
 
-        // POST: api/UserDataModels
+        // POST: Users
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<UserDataModel>> PostUserDataModel(UserDataModel userDataModel)
         {
-            Console.WriteLine("ЕГЕ");
-            _context.UserDataModels.Add(userDataModel);
+            _context.users.Add(userDataModel);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetUserDataModel), new { id = userDataModel.id }, userDataModel);
         }
 
-        // DELETE: api/UserDataModels/5
+        // DELETE: Users/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<UserDataModel>> DeleteUserDataModel(int id)
         {
-            var userDataModel = await _context.UserDataModels.FindAsync(id);
+            var userDataModel = await _context.users.FindAsync(id);
             if (userDataModel == null)
             {
                 return NotFound();
             }
 
-            _context.UserDataModels.Remove(userDataModel);
+            _context.users.Remove(userDataModel);
             await _context.SaveChangesAsync();
 
             return userDataModel;
@@ -104,7 +103,7 @@ namespace Social_core_exended.Controllers
 
         private bool UserDataModelExists(int id)
         {
-            return _context.UserDataModels.Any(e => e.id == id);
+            return _context.users.Any(e => e.id == id);
         }
     }
 }

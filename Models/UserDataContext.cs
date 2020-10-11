@@ -15,6 +15,6 @@ namespace Social_core_exended.Models
 
         }
 
-        public DbSet<UserDataModel> UserDataModels { get; set; }
+        public DbSet<UserDataModel> users { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace Social_core_exended.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("UserDataModels");
+                    b.ToTable("users");
                 });
 #pragma warning restore 612, 618
         }
